@@ -1,0 +1,43 @@
+﻿@model delme.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" asp-controller="Home" method="post">
+
+            Product Name: <input type="text" name="Name" id="Name" /><br />
+
+            Vendor:
+            <select name="Vendor" id="Vendor">
+                <option value="GFS">GFS</option>
+                <option value="Sysco">Sysco</option>
+            </select><br />
+
+            Manufacturer:
+            <select name="Mfg" id="Mfg">
+                <option value="McCain">McCain</option>
+                <option value="Hot House">Hot House</option>
+            </select><br />
+
+            Price: <input type="text" name="Price" id="Price" />
+            <input type="submit" value="Submit Form" />
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
